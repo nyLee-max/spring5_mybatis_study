@@ -52,3 +52,5 @@ primary key (course_id,stud_id),
 constraint fk_enrollment_stud foreign key (stud_id) references mybatis_study.students (stud_id),
 constraint fk_enrollment_course foreign key (course_id) references mybatis_study.courses (course_id)
 );
+
+ALTER TABLE students ADD gender tinyint unsigned;

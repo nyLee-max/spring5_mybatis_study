@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring5_mybatis_study.mapper.AddressMapper">
+	<resultMap id="AddressResult" type="Address">
+		<id property="addrId" column="addr_id"/>
+		<id property="street" column="street"/>
+		<id property="city" column="city"/>
+		<id property="state" column="state"/>
+		<id property="zip" column="zip"/>
+		<id property="contry" column="contry"/>
+	</resultMap>
+</mapper>
