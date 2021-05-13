@@ -1,6 +1,9 @@
 package spring5_mybatis_study.mapper;
 
+import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
@@ -23,7 +26,7 @@ import spring5_mybatis_study.dto.Tutor;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TutorMapperTest {
 
-	protected static final Log log = LogFactory.getLog(StudentMapperTest.class);
+	protected static final Log log = LogFactory.getLog(TutorMapperTest.class);
 	
 	@After
 	public void tearDown() throws Exception {
@@ -51,5 +54,6 @@ public class TutorMapperTest {
 		list.stream().forEach(System.out::println);
 		
 	}
+	
 
 }

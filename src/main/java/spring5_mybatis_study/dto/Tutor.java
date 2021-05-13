@@ -9,6 +9,10 @@ public class Tutor {
 	private Address address;
 	private List<Course> courses;
 
+	
+	public Tutor() {
+	}
+
 	public int getTutorId() {
 		return tutorId;
 	}

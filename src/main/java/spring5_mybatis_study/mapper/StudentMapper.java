@@ -24,4 +24,15 @@ public interface StudentMapper {
 	Student selectStudentByIdAssociation(Student student);
 
 	int insertEnumStudent(Student student);
+	
+	Student selectStudentByMap(Map<String, String> map);
+	
+	List<Student> selectAllStudentByMap(Map<String, String> map);
+	
+	Map<Integer, Student> selectStudentForMap(Student student);
+	
+	/* set 조건 */
+	int updateSetStudent(Student student);
+	
+	int updateSetStudents(Student student);
 }
