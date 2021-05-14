@@ -5,8 +5,18 @@ select * from students;
 select * from tutors;
 select * from user_pics;
 
+select course_id, name, description, start_date, end_date, tutor_id
+  from courses
+ where tutor_id = 1;
+
 delete from user_pics where id=1;
 desc user_pics;
+
+delete from courses where course_id = 8;
+
+delete
+  from tutors
+ where tutor_id = 5;
 
 select stud_id, name, email, dob, phone
   from students

@@ -123,4 +123,22 @@
 			</where>
 		 </if>
 	</delete>
+	
+	<!-- Transaction -->
+	<insert id="insertCourse" parameterType="Course">
+		insert into courses(course_id, name, description, start_date, end_date, tutor_id)
+		values (#{courseId}, #{name}, #{description}, #{startDate}, #{endDate}, #{tutorId})
+	</insert>
+	
+	<delete id="deleteCourse">
+		delete
+		  from courses
+		 where course_id=#{courseId}
+	</delete>
+	
+	<select id="selectCourse" parameterType="Course" resultMap="ResCourse">
+	select course_id, name, description, start_date, end_date, tutor_id
+ 	  from courses
+	 where tutor_id = #{tutorId};
+	</select>
 </mapper>

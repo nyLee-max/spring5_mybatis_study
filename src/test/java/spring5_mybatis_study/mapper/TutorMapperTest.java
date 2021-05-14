@@ -1,9 +1,6 @@
 package spring5_mybatis_study.mapper;
 
-import java.util.GregorianCalendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
@@ -18,7 +15,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import spring5_mybatis_study.config.ContextRoot;
+import spring5_mybatis_study.dto.Address;
 import spring5_mybatis_study.dto.Course;
+import spring5_mybatis_study.dto.PhoneNumber;
 import spring5_mybatis_study.dto.Tutor;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -55,5 +54,21 @@ public class TutorMapperTest {
 		
 	}
 	
-
+	@Test
+	public void testInsertTutorAndDeleteTutor() {
+		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+		Address address = new Address();
+		address.setAddrId(2);
+		PhoneNumber phone = new PhoneNumber("010-2222-2222");
+		
+		Tutor tutor = new Tutor(5, "mskim", "net94@naver.com", phone, address);
+		int res = mapper.insertTutor(tutor);
+		
+		Tutor findTutor = mapper.selectTutorByTutorId(tutor);
+//		log.debug(findTutor.toString());
+		
+		res += mapper.deleteTutor(tutor.getTutorId());
+		
+		Assert.assertEquals(2, res);
+	}
 }

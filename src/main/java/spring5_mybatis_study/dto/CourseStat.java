@@ -1,0 +1,32 @@
+package spring5_mybatis_study.dto;
+
+public class CourseStat {
+	private String tutor;
+	private int total;
+	
+	public CourseStat() {
+	}
+	
+	public CourseStat(String tutor, int total) {
+		this.tutor = tutor;
+		this.total = total;
+	}
+	public String getTutor() {
+		return tutor;
+	}
+	public void setTutor(String tutor) {
+		this.tutor = tutor;
+	}
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
+	@Override
+	public String toString() {
+		return String.format("CourseStat [tutor=%s, total=%s]", tutor, total);
+	}
+	
+	
+}

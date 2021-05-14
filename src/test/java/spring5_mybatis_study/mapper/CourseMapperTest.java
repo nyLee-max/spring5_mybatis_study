@@ -158,6 +158,8 @@ public class CourseMapperTest {
 	
 	@Test
 	public void test08insertCourses() {
+		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+
 		List<Course> tutors = new ArrayList<Course>();
 		tutors.add(new Course(4, "mysql", "database", new Date(), new Date(), 3));
 		tutors.add(new Course(5, "mssql", "database", new Date(), new Date(), 3));
@@ -172,6 +174,8 @@ public class CourseMapperTest {
 	
 	@Test
 	public void test09DeleteCourse() {
+		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+
 		List<Integer> courseIds = Arrays.asList(4,5,6);
 		
 		Map<String, Object> map = new HashMap<>();
@@ -179,5 +183,33 @@ public class CourseMapperTest {
 		
 		int res = mapper.deleteCourses(map);
 		Assert.assertEquals(3, res);
+	}
+	
+	@Test
+	public void test10insertCourse() {
+		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+
+		Course course = new Course(7, "Oracle", "database", new Date(), new Date(), 4);
+		
+		int res = mapper.insertCourse(course);
+		Assert.assertEquals(1, res);
+	}
+	
+	
+	@Test
+	public void test12deleteCourse() {
+		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+
+		int res = mapper.deleteCourse(7);
+		Assert.assertEquals(1, res);
+	}
+	
+	@Test
+	public void test11selectCourse() {
+		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+
+		Course course = new Course(7, "Oracle", "database", new Date(), new Date(), 4);
+		List<Course> list = mapper.selectCourse(course);
+		list.stream().forEach(System.out::println);
 	}
 }
