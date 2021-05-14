@@ -3,6 +3,6 @@
 <mapper namespace="spring5_mybatis_study.mapper.CourseStatMapper">
 
 	<select id="getCourseCountByTutor" statementType="CALLABLE" resultType="CourseStat">
-		{ call course_total(${param1, mode=In, jdbcType=Integer})}
+		{ call course_total(#{param1, mode=IN, jdbcType=INTEGER})}
 	</select>
 </mapper>
